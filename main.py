@@ -29,7 +29,7 @@ def env[T = str](var: str, default: T | None = None, conv: Callable[[str], T] = 
 
         print(f"{var}: {val}")
         return val
-    except Exception as e:
+    except TypeError as e:
         raise TypeError(f"env var '{var}' = '{str_val}' has the wrong type") from e
 
 TOKEN = env("BM_DISCORD_TOKEN")
