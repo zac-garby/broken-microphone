@@ -20,7 +20,7 @@ def env[T = str](var: str, default: T | None = None, conv: Callable[[str], T] = 
 
     try:
         if str_val is None:
-            if default:
+            if default is not None:
                 val = default
             else:
                 raise RuntimeError(f"env var '{var}' isn't set. did you load .env?")
