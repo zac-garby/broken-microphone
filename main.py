@@ -293,7 +293,7 @@ async def finish_round_core(guild_id: int) -> Optional[str]:
 
     for v in r["votes"]:
         for sid, pts in v["distribution"].items():
-            idx = sid - 1
+            idx = int(sid) - 1
             if 0 <= idx < n:
                 scores[idx] += pts
 
